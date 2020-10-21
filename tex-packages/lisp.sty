@@ -1,0 +1,6 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{lisp}[2020/04/10 Syntax Highlighter for Lisp]
+\RequirePackage{highlighter}
+\RequirePackage{mdframed}
+\newenvironment{lisp}{\begin{mdframed}[backgroundcolor=codebackground,fontcolor=normal,hidealllines=true,everyline=true]\hlStyle}{\end{mdframed}}
+\endinput

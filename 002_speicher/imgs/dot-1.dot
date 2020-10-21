@@ -1,0 +1,11 @@
+graph {
+	rankdir="TB";
+	rank="new";
+	{ rank="same";
+	"A1" -- "B11"; "B12" -- "C1";
+	}
+	rank="new";
+	{ rank="same";
+	"A2" -- "B21"; "B21" -- "B22"; "B22" -- "C2";
+	}
+}

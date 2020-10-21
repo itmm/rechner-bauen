@@ -1,0 +1,14 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{highlighter}[2018/02/13 Generic Syntax Highlighter]
+\RequirePackage{solarized}
+\RequirePackage{amsmath}
+\RequirePackage{mdframed}
+\newcommand{\hlStyle}{\small}
+\newcommand{\hlKeyword}[1]{{\color{blue}#1}}
+\newcommand{\hlPredefined}[1]{{\color{yellow}#1}}
+\newcommand{\hlString}[1]{{\color{cyan}{\glqq #1\grqq}}}
+\newcommand{\hlInline}[1]{\colorbox{codebackground}{\hlStyle$#1$}}
+\newcommand{\hlLine}[1]{\makebox[3mm][r]{\tiny #1}\makebox[2mm]{}}
+\newcommand{\hlpp}{+\!\!\!+\!}
+\newcommand{\hlIndent}[1]{\hspace*{#1\parindent}}
+\endinput

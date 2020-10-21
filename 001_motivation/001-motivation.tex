@@ -1,0 +1,147 @@
+\documentclass[a5paper,ngerman]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in,includefoot]{geometry}
+\usepackage{microtype}
+\usepackage{babel}
+\usepackage{siunitx}
+\usepackage{solarized}
+\usepackage{sectsty}
+\usepackage{ccfonts}
+\usepackage{euler}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{mdframed}
+\usepackage{lisp}
+\pagestyle{fancy}
+\fancypagestyle{plain}{
+\fancyhf{}
+\fancyfoot[C]{{\color{deemph}\small$\thepage$}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\title{\color{emph}Warum einen Rechner bauen?}
+\author{Timm Knape}
+\date{\today}
+\columnseprule.2pt
+\renewcommand{\columnseprulecolor}{\color{deemph}}
+\begin{document}
+\pagecolor{background}
+\color{normal}
+\allsectionsfont{\color{emph}\mdseries}
+\pagestyle{plain}
+\maketitle
+\thispagestyle{fancy}
+\surroundwithmdframed[backgroundcolor=codebackground,fontcolor=normal,hidealllines=true]{Verbatim}
+
+Mal im Ernst:
+Warum sollte man seine eigenen Rechner bauen?
+Gibt es nicht schon genug Rechner?
+Für wenige hundert Euro bekommt man eine ganz brauchbare tragbare
+Ausführung.
+Machen wir uns nichts vor:
+Preiswerter können wir einen solches Gerät nicht fertigen.
+Durch Skalen-Effekte macht es überhaupt keinen Sinn,
+mit einer Einzelfertigung mit den großen Herstellern in Fernost
+in Konkurrenz treten zu wollen.
+
+Aber mich treibt etwas anderes an.
+Ich bin fest davon überzeugt,
+dass ich ein viel besserer Programmierer werde,
+wenn ich genau weiß, wie mein Arbeitsgerät funktioniert.
+Und es macht sehr viel Spass.
+
+Zugegeben: ein bisschen wird man dabei zum verrückten Professor.
+Belächelt von der Gesellschaft.
+Einen eigenen Rechner zu bauen, dass ist so skurril wie:
+
+\begin{itemize}
+\item sein eigenes Bier brauen,
+\item oder seine eigene Musik spielen,
+\item oder seine eigenen Programme schreiben,
+\item oder seine eigene Steuererklärung machen,
+\item oder sein eigenes Leben leben.
+\end{itemize}
+
+Ich hoffe, ihr merkt, dass an irgend einer Stelle es gar nicht mehr so
+irrsinnig wirkt.
+
+Wir müssen ja nicht gleich einen Super-Rechner bauen.
+Wir fangen ganz einfach an.
+
+\section{Voraussetzungen}
+
+Ich bin selber kein Held am Lötkolben.
+
+Ich bin nicht reich.
+
+Und ich bin ungeduldig.
+
+Aber ich denke, ich bin stur.
+
+Sprich ich denke, jeder kann mit mir zusammen einen Rechner bauen,
+wenn er nur stur genug ist.
+
+\subsection{Welches Betriebssystem brauche ich?}
+
+Ich persönlich probiere die großen Betriebssysteme Windows und macOS so
+weit wie möglich zu meiden.
+Diesen Text erstelle ich (noch) auf einem Rasperry Pi mit einer
+Linux-Distribution.
+Aber ich bin mir bewußt, dass ich so eine Ausstattung nicht voraussetzen
+kann.
+
+Daher habe ich mich zu einem sehr gewagten Schritt entschlossen:
+Es ist völlig egal, welchen Rechner ihr habt.
+Zum erstellen des Rechners brauchen wir nur Rechner, die wir selbst
+gebaut haben.
+Für die ersten Rechner brauchen wir gar keine Rechner.
+
+Höchstens um die Bauteile einzukaufen und diese Anleitung zu lesen.
+Ein Zugriff auf das Internet mit all seinen Versuchungen ist also
+hilfreich, aber nicht notwendig.
+
+\subsection{Was für einen Rechner bauen wir?}
+
+Der erste Rechner wird sehr einfach sein.
+
+Stellt euch einen minimalen Rechner vor.
+Unsere erste Version wird noch viel einfacher sein.
+
+Ganz grob orientieren wir uns an den Altair 8800.
+Ich habe ihm den Arbeitstitel Alder-80 gegeben.
+
+Es gibt erstmal keine Tastatur.
+Keinen Bildschirm.
+Nur jede Menge Schalter und LEDs.
+
+Aber er ist ein Rechner.
+Wir können ihn mit den Schaltern programmieren.
+Das Programm ausführen.
+Und uns danach die Ergebnisse ansehen.
+
+Das alles mit zwei integrierten Bausteinen,
+einer handvoll Schalter und Widerstände.
+Und ein paar Experimentier-Steckboards und einem USB-Ladegerät.
+
+\subsection{Ausblick}
+
+Diesen Rechner können wir langsam erweitern,
+bis er die Funktionalität eines normalen Rechners hat.
+
+Der Weg ist lang.
+Der Weg ist steinig.
+Aber wir müssen den Weg selber gehen.
+Nur so entsteht Erkenntnis.
+
+Wie heißt es so schön:
+Man wird nicht sportlich, indem man anderen Leuten im Fitness-Studio
+zusieht.
+
+Also weg mit der Berieselung.
+Selbst ist der Nerd.
+
+Lasset die Spiele beginnen.
+
+\end{document}
