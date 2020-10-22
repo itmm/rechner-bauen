@@ -30,60 +30,94 @@ Dieser hat die folgende Pin-Belegung:
 
 ```gv
 graph {
-	rankdir="TB";
-	rank="new";
-	{ rank="same";
-	"A1" -- "B11"; "B12" -- "C1";
+	ranksep=0.1;
+	node[shape=plain];
+	subgraph {
+		 "1"; "32";
+		 "2"; "31";
+		 "3"; "30";
+		 "4"; "29";
+		 "5"; "28";
+		 "6"; "27";
+		 "7"; "26";
+		 "8"; "25";
+		 "9"; "24";
+		"10"; "23";
+		"11"; "22";
+		"12"; "21";
+		"13"; "20";
+		"14"; "19";
+		"15"; "18";
+		"16"; "17";
 	}
-	rank="new";
-	{ rank="same";
-	"A2" -- "B21"; "B21" -- "B22"; "B22" -- "C2";
-	}
-}
-```
 
-```gv
-graph {
-newrank=true;
-	subgraph {
-		node [shape=plain];
-		"A16" -- chip:p2;
-		"A14" -- chip:p3;
-		"A12" -- chip:p4;
-		"A7" -- chip:p5;
-		"A6" -- chip:p6;
-		"A5" -- chip:p7;
-		"A4" -- chip:p8;
-		"A3" -- chip:p9;
-		"A2" -- chip:p10;
-		"A1" -- chip:p11;
-		"A0" -- chip:p12;
-		"I/O1" -- chip:p13;
-		"I/O2" -- chip:p14;
-		"I/O3" -- chip:p15;
-		"Masse" -- chip:p16;
+	  "A16" -- "2";
+	  "A14" -- "3";
+	  "A12" -- "4";
+	   "A7" -- "5";
+	   "A6" -- "6";
+	   "A5" -- "7";
+	   "A4" -- "8";
+	   "A3" -- "9";
+	   "A2" -- "10";
+	   "A1" -- "11";
+	   "A0" -- "12";
+	 "I/O1" -- "13";
+	 "I/O2" -- "14";
+	 "I/O3" -- "15";
+	"Masse" -- "16";
+
+	"32" -- "Versorgungsspannung";
+	"31" -- "A15";
+	"30" -- "Chipauswahl-2";
+	"29" -- "/Schreiben";
+	"28" -- "A13";
+	"27" -- "A8";
+	"26" -- "A9";
+	"25" -- "A11";
+	"24" -- "/Ausgabe";
+	"23" -- "A10";
+	"22" -- "/Chipauswahl-1";
+	"21" -- "I/O8";
+	"20" -- "I/O7";
+	"19" -- "I/O6";
+	"18" -- "I/O5";
+	"17" -- "I/O4";
+
+	{ rank="same";           "1"; "32"; "Versorgungsspannung"; }
+	{ rank="same";   "A16";  "2"; "31"; "A15"; }
+	{ rank="same";   "A14";  "3"; "30"; "Chipauswahl-2"; }
+	{ rank="same";   "A12";  "4"; "29"; "/Schreiben"; }
+	{ rank="same";    "A7";  "5"; "28"; "A13"; }
+	{ rank="same";    "A6";  "6"; "27"; "A8"; }
+	{ rank="same";    "A5";  "7"; "26"; "A9"; }
+	{ rank="same";    "A4";  "8"; "25"; "A11"; }
+	{ rank="same";    "A3";  "9"; "24"; "/Ausgabe"; }
+	{ rank="same";    "A2"; "10"; "23"; "A10"; }
+	{ rank="same";    "A1"; "11"; "22"; "/Chipauswahl-1"; }
+	{ rank="same";    "A0"; "12"; "21"; "I/O8"; }
+	{ rank="same";  "I/O1"; "13"; "20"; "I/O7"; }
+	{ rank="same";  "I/O2"; "14"; "19"; "I/O6"; }
+	{ rank="same";  "I/O3"; "15"; "18"; "I/O5"; }
+	{ rank="same"; "Masse"; "16"; "17"; "I/O4"; }
+
+	{
+		edge[style="invis"];
+		 "1" --  "2";
+		 "2" --  "3";
+		 "3" --  "4";
+		 "4" --  "5";
+		 "5" --  "6";
+		 "6" --  "7";
+		 "7" --  "8";
+		 "8" --  "9";
+		 "9" -- "10";
+		"10" -- "11";
+		"11" -- "12";
+		"12" -- "13";
+		"13" -- "14";
+		"14" -- "15";
+		"15" -- "16";
 	}
-	subgraph {
-		chip [shape=record label="{<p1>1|<p2>2|<p3>3|<p4>4|<p5>5|<p6>6|<p7>7|<p8>8|<p9>9|<p10>10|<p11>11|<p12>12|<p13>13|<p14>14|<p15>15|<p16>16}|{<p32>32|<p31>31|<p30>30|<p29>29|<p28>28|<p27>27|<p26>26|<p25>25|<p24>24|<p23>23|<p22>22|<p21>21|<p20>20|<p19>19|<p18>18|<p17>17}"];
-	}
-	subgraph {
-		node [shape=plain];
-		chip:p32 -- "Versorgungsspannung";
-		chip:p31 -- "A15";
-		chip:p30 -- "Chipauswahl-2";
-		chip:p29 -- "/Schreiben";
-		chip:p28 -- "A13";
-		chip:p27 -- "A8";
-		chip:p26 -- "A9";
-		chip:p25 -- "A11";
-		chip:p24 -- "/Ausgabe";
-		chip:p23 -- "A10";
-		chip:p22 -- "/Chipauswahl-1";
-		chip:p21 -- "I/O8";
-		chip:p20 -- "I/O7";
-		chip:p19 -- "I/O6";
-		chip:p18 -- "I/O5";
-		chip:p17 -- "I/O4";
-	 }
 }
 ```
