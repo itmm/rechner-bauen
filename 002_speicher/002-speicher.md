@@ -32,7 +32,7 @@ Dieser hat die folgende Pin-Belegung:
 graph {
 	ranksep=0.1;
 	node[shape=plain];
-	subgraph {
+	subgraph chip {
 		 "1"; "32";
 		 "2"; "31";
 		 "3"; "30";
