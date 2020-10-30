@@ -1,0 +1,46 @@
+\documentclass[a5paper,ngerman]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in,includefoot]{geometry}
+\usepackage{microtype}
+\usepackage{babel}
+\usepackage{siunitx}
+\usepackage{solarized}
+\usepackage{sectsty}
+\usepackage{ccfonts}
+\usepackage{euler}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{mdframed}
+\usepackage{lisp}
+\pagestyle{fancy}
+\fancypagestyle{plain}{
+\fancyhf{}
+\fancyfoot[C]{{\color{deemph}\small$\thepage$}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\title{\color{emph}Maschinenkonsole}
+\author{Timm Knape}
+\date{\today}
+\columnseprule.2pt
+\renewcommand{\columnseprulecolor}{\color{deemph}}
+\begin{document}
+\pagecolor{background}
+\color{normal}
+\allsectionsfont{\color{emph}\mdseries}
+\pagestyle{plain}
+\maketitle
+\thispagestyle{fancy}
+\surroundwithmdframed[backgroundcolor=codebackground,fontcolor=normal,hidealllines=true]{Verbatim}
+
+\begin{itemize}
+\item Aufbau und Funktion einer Maschinenkonsole
+\item Beispiel PDP11
+\item Beispiel Altair 8800
+\item Schaltplan
+\item Beschreibung Bus
+\end{itemize}
+
+\end{document}
