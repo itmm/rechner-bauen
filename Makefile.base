@@ -8,16 +8,19 @@ OUTPUTs := $(PLAIN_OUTPUTs) $(LIGHT_OUTPUTs) $(DARK_OUTPUTs)
 DOTs := $(wildcard imgs/*.dot)
 DOT_PDFs := $(DOTs:.dot=.pdf) $(DOTs:.dot=-light.pdf) $(DOTs:.dot=-dark.pdf)
 
+DOX_ARGS := --prefix=../
+DOT_ARGS := -Tpdf -Gmargin=1 -Gtruecolor -Gbgcolor=transparent -Nstyle=filled '-Nfontsize=9' '-Nfontname=CMU Concrete'
+
 all: $(OUTPUTs)
 
 %.tex: %.md
-	../../dox/dox --single-col --prefix=../ < $^ > $@
+	../../dox/dox $(DOX_ARGS) <"$<" >"$@"
 
 %-light.tex: %.md
-	../../dox/dox --single-col --prefix=../ --theme=light < $^ > $@
+	../../dox/dox $(DOX_ARGS) --theme=light <"$<" >"$@"
 	
 %-dark.tex: %.md
-	../../dox/dox --single-col --prefix=../ --theme=dark < $^ > $@
+	../../dox/dox $(DOX_ARGS) --theme=dark <"$<" >"$@"
 
 run-gen: $(SOURCEs:.md=.tex) $(SOURCEs:.md=-light.tex) $(SOURCEs:.md=-dark.tex)
 	make gen
@@ -28,16 +31,16 @@ $(OUTPUTs): run-gen
 gen: $(DOT_PDFs)
 
 imgs/%.pdf: imgs/%.dot
-	dot -Tpdf -Gmargin=1 -Gtruecolor -Gbgcolor=transparent -Nstyle=filled '-Nfillcolor=0.0000 0.0000 1' '-Nfontsize=9' '-Nfontname=CMU Concrete' $^ >$@
+	dot $(DOT_ARGS) '-Nfillcolor=0.0000 0.0000 1' "$<" >"$@"
 
 imgs/%-light.pdf: imgs/%.dot
-	dot -Tpdf -Gmargin=1 -Gtruecolor -Gbgcolor=transparent -Nstyle=filled '-Nfillcolor=0.1267 0.1050 0.9333' '-Nfontsize=9' '-Nfontname=CMU Concrete' '-Ncolor=0.5444 0.2290 0.5137' '-Nfontcolor=0.5444 0.2290 0.5137' '-Ecolor=0.5444 0.2290 0.5137' $^ >$@
+	dot $(DOT_ARGS) '-Nfillcolor=0.1267 0.1050 0.9333' '-Ncolor=0.5444 0.2290 0.5137' '-Nfontcolor=0.5444 0.2290 0.5137' '-Ecolor=0.5444 0.2290 0.5137' "$<" >"$@"
 
 imgs/%-dark.pdf: imgs/%.dot
-	dot -Tpdf -Gmargin=1 -Gtruecolor -Gbgcolor=transparent -Nstyle=filled '-Nfillcolor=0.5339 0.8939 0.2588' '-Nfontsize=9' '-Nfontname=CMU Concrete' '-Ncolor=0.5175 0.1267 0.5882' '-Nfontcolor=0.5175 0.1267 0.5882' '-Ecolor=0.5175 0.1267 0.5882' $^ >$@
+	dot $(DOT_ARGS) '-Nfillcolor=0.5339 0.8939 0.2588' '-Ncolor=0.5175 0.1267 0.5882' '-Nfontcolor=0.5175 0.1267 0.5882' '-Ecolor=0.5175 0.1267 0.5882' "$<" >"$@"
 
 %.pdf: %.tex
-	TEXINPUTS=.:../tex-packages: pdflatex $^
+	TEXINPUTS=.:../tex-packages: pdflatex "$<"
 
 clean:
 	rm -f *.tex *.aux *.log $(OUTPUTs) $(DOTs) $(DOT_PDFs) run-gen
